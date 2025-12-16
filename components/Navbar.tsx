@@ -10,7 +10,7 @@ interface NavbarProps {
 
 const navItems = [
   { label: 'Work', href: '#work' },
-  { label: 'Services', href: '#services' },
+  { label: 'Gallery', href: '#gallery' },
   { label: 'Packages', href: '#packages' },
   { label: 'Testimonials', href: '#testimonials' },
 ];
@@ -37,7 +37,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
     >
       <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="text-2xl font-display font-semibold tracking-tight text-charcoal dark:text-white z-50">
+        <a href="#" className="text-2xl font-display font-bold tracking-tight text-charcoal dark:text-white z-50">
           Archiaura
         </a>
 
@@ -105,7 +105,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
                 key={item.label}
                 href={item.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-2xl font-display font-medium text-charcoal dark:text-white"
+                className="text-3xl font-display font-medium text-charcoal dark:text-white"
               >
                 {item.label}
               </a>
@@ -113,7 +113,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
             <a
               href="#contact"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-2xl font-display font-medium text-charcoal dark:text-white"
+              className="text-3xl font-display font-medium text-charcoal dark:text-white"
             >
               Contact
             </a>

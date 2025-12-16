@@ -16,7 +16,8 @@ export interface Testimonial {
   quote: string;
   author: string;
   project: string;
-  image: string;
+  image: string;      // User avatar
+  spaceImage: string; // The interior image associated with the review
 }
 
 export interface Project {

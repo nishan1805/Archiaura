@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
-import Services from './sections/Services';
+import Gallery from './sections/Gallery';
 import Work from './sections/Work';
 import Pricing from './sections/Pricing';
 import Testimonials from './sections/Testimonials';
+import Services from './sections/Services';
 import Contact from './sections/Contact';
 import Footer from './sections/Footer';
 
@@ -29,12 +30,15 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-surface-light dark:bg-surface-dark transition-colors duration-500">
+    <div className="min-h-screen bg-surface-light dark:bg-surface-dark transition-colors duration-500 font-sans">
       <Navbar isDark={isDark} toggleTheme={toggleTheme} />
       <main>
         <Hero />
+        <Gallery />
         <Services />
+        {/* Work section hidden as per design update 
         <Work />
+        */}
         <Pricing />
         <Testimonials />
         <Contact />
