@@ -4,9 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Archiaura | Soulful Interiors</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -24,7 +31,7 @@
                 200: '#DFC6AA',
                 300: '#CEA67D',
                 400: '#BD8751',
-                500: '#B98B59', // Primary Brass/Terracotta
+                500: '#B98B59',
                 600: '#946F47',
                 700: '#6F5336',
                 800: '#4A3724',
@@ -45,17 +52,18 @@
               surface: {
                 light: '#FFFCF9',
                 dark: '#121212',
-              }
+              },
             },
             backgroundImage: {
               'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-            }
-          }
-        }
-      }
+            },
+          },
+        },
+      };
     </script>
+
+    <!-- Global Styles -->
     <style>
-      /* Lenis-like smooth scrolling feel for non-lenis implementations */
       html {
         scroll-behavior: smooth;
       }
@@ -63,7 +71,6 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
       }
-      /* Hide scrollbar for marquee */
       .no-scrollbar::-webkit-scrollbar {
         display: none;
       }
@@ -72,19 +79,12 @@
         scrollbar-width: none;
       }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "framer-motion": "https://esm.sh/framer-motion@^12.23.26",
-    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3"
-  }
-}
-</script>
-</head>
+  </head>
+
   <body class="bg-surface-light dark:bg-surface-dark text-charcoal dark:text-neutral-100 transition-colors duration-500">
     <div id="root"></div>
+
+    <!-- Vite Entry -->
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>
