@@ -1,5 +1,4 @@
 import React from 'react';
-import { Instagram, Linkedin, Facebook } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -7,20 +6,21 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="grid md:grid-cols-4 gap-12 mb-16 border-b border-white/10 pb-16">
           <div className="md:col-span-1">
-            <a href="#" className="text-2xl font-display font-bold tracking-tight mb-6 block">Archiaura</a>
-            <p className="text-neutral-400 text-sm leading-relaxed mb-6">
+            <a href="#" className="mb-6 block">
+              <img 
+                src="https://raw.githubusercontent.com/stackblitz/stackblitz-images/main/archiaura-logo-gold.png" 
+                alt="Archiaura Logo" 
+                className="h-14 w-auto object-contain brightness-110"
+              />
+            </a>
+            <p className="text-neutral-400 text-sm leading-relaxed mb-6 font-light">
               Designing soulful, functional, and timeless interiors for modern living.
             </p>
-            <div className="flex gap-4">
-              <a href="#" className="p-2 bg-white/5 rounded-full hover:bg-white/10 transition-colors"><Instagram size={18} /></a>
-              <a href="#" className="p-2 bg-white/5 rounded-full hover:bg-white/10 transition-colors"><Linkedin size={18} /></a>
-              <a href="#" className="p-2 bg-white/5 rounded-full hover:bg-white/10 transition-colors"><Facebook size={18} /></a>
-            </div>
           </div>
           
           <div>
-            <h4 className="font-semibold mb-6">Company</h4>
-            <ul className="space-y-4 text-sm text-neutral-400">
+            <h4 className="font-display font-bold mb-6 tracking-wide">Company</h4>
+            <ul className="space-y-4 text-sm text-neutral-400 font-light">
               <li><a href="#" className="hover:text-accent-400 transition-colors">About Us</a></li>
               <li><a href="#work" className="hover:text-accent-400 transition-colors">Our Work</a></li>
               <li><a href="#" className="hover:text-accent-400 transition-colors">Careers</a></li>
@@ -29,8 +29,8 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-6">Services</h4>
-            <ul className="space-y-4 text-sm text-neutral-400">
+            <h4 className="font-display font-bold mb-6 tracking-wide">Services</h4>
+            <ul className="space-y-4 text-sm text-neutral-400 font-light">
               <li><a href="#" className="hover:text-accent-400 transition-colors">Residential Design</a></li>
               <li><a href="#" className="hover:text-accent-400 transition-colors">Commercial Design</a></li>
               <li><a href="#" className="hover:text-accent-400 transition-colors">Styling & Decor</a></li>
@@ -39,8 +39,8 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-             <h4 className="font-semibold mb-6">Newsletter</h4>
-             <p className="text-sm text-neutral-400 mb-4">Design tips and trends, straight to your inbox.</p>
+             <h4 className="font-display font-bold mb-6 tracking-wide">Newsletter</h4>
+             <p className="text-sm text-neutral-400 mb-4 font-light">Design tips and trends, straight to your inbox.</p>
              <form className="flex gap-2">
                <input 
                  type="email" 
@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-neutral-500">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-neutral-500 font-light">
           <p>&copy; {new Date().getFullYear()} Archiaura Studio. All rights reserved.</p>
           <div className="flex gap-8">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>

@@ -26,16 +26,16 @@
             },
             colors: {
               accent: {
-                50: '#F9F3EC',
-                100: '#F0E5D6',
-                200: '#DFC6AA',
-                300: '#CEA67D',
-                400: '#BD8751',
-                500: '#B98B59',
-                600: '#946F47',
-                700: '#6F5336',
-                800: '#4A3724',
-                900: '#251C12',
+                50: '#FAF8F0',
+                100: '#F5EED9',
+                200: '#EBD9A7',
+                300: '#E0C475',
+                400: '#D6AF43',
+                500: '#D4AF37', // Official Brand Gold
+                600: '#B38F2E',
+                700: '#8C6F24',
+                800: '#66511A',
+                900: '#403210',
               },
               charcoal: {
                 DEFAULT: '#1C1C1C',
@@ -79,7 +79,18 @@
         scrollbar-width: none;
       }
     </style>
-  </head>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "framer-motion": "https://esm.sh/framer-motion@^12.23.26"
+  }
+}
+</script>
+</head>
 
   <body class="bg-surface-light dark:bg-surface-dark text-charcoal dark:text-neutral-100 transition-colors duration-500">
     <div id="root"></div>

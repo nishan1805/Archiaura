@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, X, Sun, Moon, Instagram } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from './Button';
 
@@ -37,8 +37,20 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
     >
       <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="text-2xl font-display font-bold tracking-tight text-charcoal dark:text-white z-50">
-          Archiaura
+        <a href="#" className="flex items-center z-50">
+          <img 
+            src="https://raw.githubusercontent.com/stackblitz/stackblitz-images/main/archiaura-logo-gold.png" 
+            alt="Archiaura Logo" 
+            className="h-10 md:h-12 w-auto object-contain"
+            onError={(e) => {
+              // Fallback to text if image fails to load
+              e.currentTarget.style.display = 'none';
+              e.currentTarget.nextElementSibling?.classList.remove('hidden');
+            }}
+          />
+          <span className="hidden text-2xl font-display font-bold tracking-tight text-charcoal dark:text-white">
+            Archiaura
+          </span>
         </a>
 
         {/* Desktop Nav */}
@@ -62,6 +74,18 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
 
         {/* Right Actions */}
         <div className="hidden md:flex items-center gap-4">
+          <motion.a
+            href="https://www.instagram.com/archiaura.spaces?igsh=aTJrZzRid2VucnFy"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.1, rotate: 5 }}
+            whileTap={{ scale: 0.9 }}
+            className="p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors text-charcoal dark:text-white"
+            aria-label="Follow us on Instagram"
+          >
+            <Instagram size={20} />
+          </motion.a>
+          
           <button
             onClick={toggleTheme}
             className="p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors text-charcoal dark:text-white"
@@ -69,6 +93,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
           >
             {isDark ? <Sun size={20} /> : <Moon size={20} />}
           </button>
+          
           <Button size="sm" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth'})}>
             Book Consultation
           </Button>
@@ -76,6 +101,14 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
 
         {/* Mobile Menu Toggle */}
         <div className="flex md:hidden items-center gap-4">
+          <motion.a
+            href="https://www.instagram.com/archiaura.spaces?igsh=aTJrZzRid2VucnFy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 text-charcoal dark:text-white"
+          >
+            <Instagram size={20} />
+          </motion.a>
           <button
             onClick={toggleTheme}
             className="p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors text-charcoal dark:text-white"
