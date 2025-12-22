@@ -48,7 +48,7 @@ const Hero: React.FC = () => {
               variant="outline" 
               size="lg" 
               className="border-white text-white hover:bg-white hover:text-charcoal hover:border-white" 
-              onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth'})}
+              onClick={() => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth'})}
             >
               View Gallery
               <ArrowRight className="ml-2 w-4 h-4" />

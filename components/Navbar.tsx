@@ -9,7 +9,6 @@ interface NavbarProps {
 }
 
 const navItems = [
-  { label: 'Work', href: '#work' },
   { label: 'Gallery', href: '#gallery' },
   { label: 'Packages', href: '#packages' },
   { label: 'Testimonials', href: '#testimonials' },
@@ -40,7 +39,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
         <a href="#" className="flex items-center z-50">
           <img 
             src="https://raw.githubusercontent.com/stackblitz/stackblitz-images/main/archiaura-logo-gold.png" 
-            alt="Archiaura Logo" 
+            alt="Archi&Aura Logo" 
             className="h-10 md:h-12 w-auto object-contain"
             onError={(e) => {
               // Fallback to text if image fails to load
@@ -49,7 +48,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
             }}
           />
           <span className="hidden text-2xl font-display font-bold tracking-tight text-charcoal dark:text-white">
-            Archiaura
+            Archi&Aura
           </span>
         </a>
 

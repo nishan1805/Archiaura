@@ -8,7 +8,7 @@ const galleryImages = [
   { id: 3, src: "https://images.pexels.com/photos/245208/pexels-photo-245208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", title: "Workspace" },
   { id: 4, src: "https://images.pexels.com/photos/3623785/pexels-photo-3623785.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", title: "Zen Bedroom" },
   { id: 5, src: "https://images.pexels.com/photos/2089698/pexels-photo-2089698.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", title: "Luxury Dining" },
-  { id: 6, src: "https://images.pexels.com/photos/2986012/pexels-photo-2986012.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", title: "Lounge Area" },
+  { id: 6, src: "https://images.pexels.com/photos/5998120/pexels-photo-5998120.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", title: "Lounge Area" },
 ];
 
 const Gallery: React.FC = () => {

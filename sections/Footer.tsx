@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
             <a href="#" className="mb-6 block">
               <img 
                 src="https://raw.githubusercontent.com/stackblitz/stackblitz-images/main/archiaura-logo-gold.png" 
-                alt="Archiaura Logo" 
+                alt="Archi&Aura Logo" 
                 className="h-14 w-auto object-contain brightness-110"
               />
             </a>

@@ -8,7 +8,7 @@ const testimonials: Testimonial[] = [
     id: 1,
     quote: "Archiaura completely transformed our chaotic apartment into a sanctuary. The attention to detail, especially the custom woodwork, is phenomenal.",
     author: "Priya & Rahul",
-    project: "4BHK Apartment, Whitefield",
+    project: "4BHK Apartment, Raipur",
     image: "https://randomuser.me/api/portraits/women/44.jpg",
     spaceImage: "https://images.pexels.com/photos/3797991/pexels-photo-3797991.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
   },
@@ -16,7 +16,7 @@ const testimonials: Testimonial[] = [
     id: 2,
     quote: "Professional, punctual, and incredibly creative. They understood our need for a pet-friendly yet elegant home perfectly.",
     author: "Sneha Kapoor",
-    project: "Villa Renovation, Koramangala",
+    project: "Villa Renovation, Raipur",
     image: "https://randomuser.me/api/portraits/women/68.jpg",
     spaceImage: "https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
   },
@@ -24,7 +24,7 @@ const testimonials: Testimonial[] = [
     id: 3,
     quote: "The team balanced our budget constraints with our luxury aspirations beautifully. Highly recommend for anyone looking for modern Indian aesthetics.",
     author: "Arjun Mehta",
-    project: "Office Space, Indiranagar",
+    project: "Office Space, Raipur",
     image: "https://randomuser.me/api/portraits/men/32.jpg",
     spaceImage: "https://images.pexels.com/photos/1170412/pexels-photo-1170412.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
   }
