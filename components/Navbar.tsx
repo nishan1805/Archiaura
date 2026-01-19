@@ -38,11 +38,10 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
         {/* Logo */}
         <a href="#" className="flex items-center z-50">
           <img 
-            src="https://raw.githubusercontent.com/stackblitz/stackblitz-images/main/archiaura-logo-gold.png" 
-            alt="Archi&Aura Logo" 
-            className="h-10 md:h-12 w-auto object-contain"
+            src="/logo.png" 
+            alt="Archiaura Logo" 
+            className="h-14 md:h-12 w-auto object-contain"
             onError={(e) => {
-              // Fallback to text if image fails to load
               e.currentTarget.style.display = 'none';
               e.currentTarget.nextElementSibling?.classList.remove('hidden');
             }}
@@ -85,13 +84,13 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
             <Instagram size={20} />
           </motion.a>
           
-          <button
+          {/* <button
             onClick={toggleTheme}
             className="p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors text-charcoal dark:text-white"
             aria-label="Toggle theme"
           >
             {isDark ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
+          </button> */}
           
           <Button size="sm" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth'})}>
             Book Consultation
@@ -108,12 +107,12 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
           >
             <Instagram size={20} />
           </motion.a>
-          <button
+          {/* <button
             onClick={toggleTheme}
             className="p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors text-charcoal dark:text-white"
           >
             {isDark ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
+          </button> */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="p-2 text-charcoal dark:text-white z-50"

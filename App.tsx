@@ -10,14 +10,12 @@ import Contact from './sections/Contact';
 import Footer from './sections/Footer';
 
 const App: React.FC = () => {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
 
-  // Initialize theme based on preference
+  // Initialize theme - always start in dark mode
   useEffect(() => {
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setIsDark(true);
-      document.documentElement.classList.add('dark');
-    }
+    setIsDark(true);
+    document.documentElement.classList.add('dark');
   }, []);
 
   const toggleTheme = () => {

@@ -8,9 +8,9 @@ const Footer: React.FC = () => {
           <div className="md:col-span-1">
             <a href="#" className="mb-6 block">
               <img 
-                src="https://raw.githubusercontent.com/stackblitz/stackblitz-images/main/archiaura-logo-gold.png" 
-                alt="Archi&Aura Logo" 
-                className="h-14 w-auto object-contain brightness-110"
+                src="/logo.png" 
+                alt="Archiaura Logo" 
+                className="h-30 w-40 object-cover brightness-110 border-white/10"
               />
             </a>
             <p className="text-neutral-400 text-sm leading-relaxed mb-6 font-light">

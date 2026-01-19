@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from '../components/Button';
-import { Mail, Phone, MapPin, CheckCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, CheckCircle, AlertCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const Contact: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -13,14 +16,80 @@ const Contact: React.FC = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate successful submission logic
-    setIsSubmitted(true);
-    
-    // In a real implementation, you would send this to a backend or an email service.
-    // For this design, we provide a visual confirmation.
-    console.log("Form submitted to archiandaura@gmail.com", formData);
+    setIsSubmitting(true);
+    setError(null);
+
+    try {
+      // EmailJS configuration from environment variables
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const autoReplyTemplateId = import.meta.env.VITE_EMAILJS_AUTOREPLY_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      // Prepare template parameters matching your email template
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        project_type: formData.type || 'Not specified',
+        message: formData.message || 'No additional message provided',
+        page_url: window.location.href,
+        submitted_at: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+        date: new Date().toLocaleString('en-IN', { 
+          timeZone: 'Asia/Kolkata',
+          dateStyle: 'full',
+          timeStyle: 'long'
+        })
+      };
+
+      // Send email to yourself (admin notification)
+      const response = await emailjs.send(
+        serviceId,
+        templateId,
+        templateParams,
+        publicKey
+      );
+
+      // Send auto-reply to the user if auto-reply template is configured
+      if (autoReplyTemplateId) {
+        const autoReplyParams = {
+          to_name: formData.name,
+          to_email: formData.email,
+          from_email : formData.email,
+          phone : formData.phone,
+          project_type: formData.type || 'Not specified',
+          message: formData.message || 'No additional message provided',
+        };
+
+        await emailjs.send(
+          serviceId,
+          autoReplyTemplateId,
+          autoReplyParams,
+          publicKey
+        );
+      }
+
+      if (response.status === 200) {
+        setIsSubmitted(true);
+        // Reset form
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          type: '',
+          message: ''
+        });
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (err) {
+      console.error('Error sending email:', err);
+      setError('Failed to send message. Please try again or contact us directly at archiandaura@gmail.com');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -82,6 +151,17 @@ const Contact: React.FC = () => {
 
           {/* Form Side */}
           <div className="md:col-span-3 p-10 relative">
+            {error && (
+              <motion.div 
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl flex items-start gap-3"
+              >
+                <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+                <p className="text-sm text-red-700 dark:text-red-300">{error}</p>
+              </motion.div>
+            )}
+            
             <AnimatePresence mode="wait">
               {!isSubmitted ? (
                 <motion.form 
@@ -160,7 +240,9 @@ const Contact: React.FC = () => {
                     ></textarea>
                   </div>
 
-                  <Button type="submit" fullWidth size="lg">Send Request</Button>
+                  <Button type="submit" fullWidth size="lg" disabled={isSubmitting}>
+                    {isSubmitting ? 'Sending...' : 'Send Request'}
+                  </Button>
                 </motion.form>
               ) : (
                 <motion.div 
