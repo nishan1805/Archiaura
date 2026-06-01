@@ -136,8 +136,8 @@ const Contact: React.FC = () => {
                   <div>
                     <p className="text-[10px] text-neutral-400 uppercase tracking-widest mb-1 font-bold">Address</p>
                     <p className="text-sm leading-relaxed text-neutral-300">
-                      Mahaveer Nagar, Golcha Park,<br />
-                      Shivam Building, 3rd Floor, Room 308,<br />
+                      Office No. 416, 4th Floor,<br />
+                      Golden Trade Centre,<br />
                       Raipur, Chhattisgarh – 492001
                     </p>
                   </div>
